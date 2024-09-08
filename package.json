@@ -19,5 +19,9 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "bcrpyt": "^2.0.0",
+    "next-auth": "^4.24.7"
+  }
 }
