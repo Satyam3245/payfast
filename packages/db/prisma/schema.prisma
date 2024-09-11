@@ -23,7 +23,7 @@ model Merchant{
   auth_type         AuthType
 }
 
-enum AuthType{
+enum AuthType {
   Google
   GITHUB
 }

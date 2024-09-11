@@ -11,11 +11,22 @@ export async function POST( req : NextRequest ){
             {
                 status: 400
             }
-
         );
     }
 
     try {
+        const checkUser = await prisma.user.findFirst({
+            where:{
+                email
+            }
+        })
+        if(checkUser){
+            return NextResponse.json({
+                error: "User already exists"
+            },{
+                status: 400
+            })
+        }
         const user = await prisma.user.create({
             data:{
                 email,
@@ -31,14 +42,18 @@ export async function POST( req : NextRequest ){
         if(!user){
             return NextResponse.json(
                 {
-                    error: "User already exists"
+                    error: "error while creating user"
                 },
                 {
                     status: 400
                 }
             );    
         }
-        return NextResponse.json(user);
+        return NextResponse.json({
+            msg : "User created successfully"
+        },{
+            status: 200,
+        });
     } catch (error) {
                 return NextResponse.json(
             {

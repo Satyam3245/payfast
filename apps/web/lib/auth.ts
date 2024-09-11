@@ -8,9 +8,11 @@ export const authOptions = {
                 password : {label:'Password',placeholder:'Enter Your Password',type:"password"}    
             },
             async authorize(credentials:any){
-                return {
-                    id : 'user1'
+                const { email, password } = credentials;
+                if(!email || !password){
+                    return new Error('Please Provide the Email or Password !')
                 }
+
             }    
         })
     ],

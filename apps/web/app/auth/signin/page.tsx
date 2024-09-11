@@ -1,15 +1,20 @@
 "use client"
+import axios from 'axios';
+import { Loader } from '@repo/ui/loader'; 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react'
 export default function SignInPage() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-
-  const handleSignIn = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle sign-in logic here
-    console.log('Sign in attempted with:', email, password)
+  const router = useRouter();
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [loading , setLoading] = useState<boolean|React.ReactNode>(false);
+  const [error , setError] = useState<string|null>('');
+  const handleSignIn = async ()=>{}
+  if(error){
+    return <div>
+      <h1>{error}</h1>
+    </div>
   }
-
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col justify-center items-center p-4">
       <div className="w-full max-w-md">
@@ -44,7 +49,7 @@ export default function SignInPage() {
                 required 
               />
             </div>
-            <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-md p-2">
+            <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-md p-2" onClick={handleSignIn}>
               Sign In
             </button>
           </form>
