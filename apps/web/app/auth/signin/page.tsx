@@ -1,6 +1,5 @@
 "use client"
 import axios from 'axios';
-import { Loader } from '@repo/ui/loader'; 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react'
 export default function SignInPage() {
