@@ -21,8 +21,10 @@
     "packages/*"
   ],
   "dependencies": {
+    "@types/bcrypt": "^5.0.2",
     "axios": "^1.7.7",
     "bcrpyt": "^2.0.0",
+    "bcrypt": "^5.1.1",
     "lucide-react": "^0.439.0",
     "next-auth": "^4.24.7"
   }
