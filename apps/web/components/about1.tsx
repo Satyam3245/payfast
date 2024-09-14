@@ -1,6 +1,6 @@
 export const About1 = ()=>{
     return <div>
-        <div className="text-white px-12 py-4">
+        <div className="text-white px-12 py-7">
             <div className="bg-gray-500 p-6 rounded-xl flex justify-around">
                 <div className="flex flex-col">
                     <h1 className="text-6xl font-semibold">Fast, Safe,</h1>
